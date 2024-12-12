@@ -52,6 +52,12 @@ public class TankDrive implements IDriving
         right.setPower(0);
     }
 
+    public void tankDrive(float left, float right)
+    {
+        joystickDrive(left, right, 0);
+    }
+
+
     /**
      * Standard Tank Drive Input using Two joysticks
      * @param x power to the Left track

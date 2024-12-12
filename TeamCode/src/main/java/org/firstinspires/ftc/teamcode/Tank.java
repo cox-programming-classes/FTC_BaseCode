@@ -17,21 +17,21 @@ import org.firstinspires.ftc.teamcode.Driving.TankDrive;
  * you cannot access any of the sensors or motors outside of this class (because encapsulation and saefty)
  * you can only control things by using the libraries and the functions within them that are public
  */
-public class Robot {
+public class Tank {
 
 
 
     /**
      * itialization of libraires
      */
-    public IDriving driveTrain;
+    public TankDrive driveTrain;
 
     private LinearOpMode opMode;
 
     /**
      * @param opMode pass by writing: new Robot(this);
      */
-    public Robot(LinearOpMode opMode) {
+    public Tank(LinearOpMode opMode) {
         HardwareMap map = opMode.hardwareMap;
         this.opMode = opMode;
 

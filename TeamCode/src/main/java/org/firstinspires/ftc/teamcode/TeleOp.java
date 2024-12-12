@@ -2,14 +2,16 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
+import org.firstinspires.ftc.teamcode.Driving.TankDrive;
+
 
 @com.qualcomm.robotcore.eventloop.opmode.TeleOp(name = "TeleOp")
 public class TeleOp extends LinearOpMode {
 
-    Robot robot;
+    Tank robot;
 
     public void runOpMode() throws InterruptedException {
-        robot = new Robot(this);
+        robot = new Tank(this);
 
         waitForStart();
 
@@ -20,11 +22,11 @@ public class TeleOp extends LinearOpMode {
             //             MAIN CONTROLLER
             //_______________________________________________
             
-            float x = gamepad1.right_stick_x;
-            float y = -gamepad1.right_stick_y; //inputs from joystick are opposite
-            float t = gamepad1.left_stick_x;
+            float r = -gamepad1.right_stick_y;
+            float l = -gamepad1.left_stick_y; //inputs from joystick are opposite
 
-            robot.driveTrain.joystickDrive(x, y, t);
+
+            robot.driveTrain.tankDrive(l, r);
 
             //_______________________________________________
             //             MECH CONTROLLER
@@ -38,11 +40,8 @@ public class TeleOp extends LinearOpMode {
 
             telemetry.addLine("Joystick Inputs");
             //joystick inputs
-            telemetry.addData("x: ", x);
-            telemetry.addData("y: ", y);
-            telemetry.addData("t: ", t);
-
-
+            telemetry.addData("left: ", l);
+            telemetry.addData("right: ", r);
 
             telemetry.update();
         }
