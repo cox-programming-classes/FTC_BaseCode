@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.Driving;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class StrafeDrive implements IDriving {
 
@@ -11,11 +12,12 @@ public class StrafeDrive implements IDriving {
 
     private double speed = 0.1;
 
-    public StrafeDrive(DcMotor rf, DcMotor rb, DcMotor lf, DcMotor lb) {
-        this.rf = rf;
-        this.rb = rb;
-        this.lf = lf;
-        this.lb =lb;
+    public StrafeDrive(HardwareMap map) {
+
+        rf = map.tryGet(DcMotor.class, "rf");
+        rb = map.tryGet(DcMotor.class, "rb");
+        lf = map.tryGet(DcMotor.class, "lf");
+        lb = map.tryGet(DcMotor.class, "lb");
     }
 
 

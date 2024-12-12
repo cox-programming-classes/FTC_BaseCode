@@ -26,14 +26,9 @@ public class Tank {
      */
     public TankDrive driveTrain;
 
-    private LinearOpMode opMode;
 
-    /**
-     * @param opMode pass by writing: new Robot(this);
-     */
-    public Tank(LinearOpMode opMode) {
-        HardwareMap map = opMode.hardwareMap;
-        this.opMode = opMode;
+    public Tank(HardwareMap map)
+    {
 
         driveTrain = new TankDrive(map);
     }

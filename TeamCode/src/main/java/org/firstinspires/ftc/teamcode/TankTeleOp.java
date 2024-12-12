@@ -2,16 +2,14 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-import org.firstinspires.ftc.teamcode.Driving.TankDrive;
 
-
-@com.qualcomm.robotcore.eventloop.opmode.TeleOp(name = "TeleOp")
-public class TeleOp extends LinearOpMode {
+@com.qualcomm.robotcore.eventloop.opmode.TeleOp(name = "TankTeleOp")
+public class TankTeleOp extends LinearOpMode {
 
     Tank robot;
 
     public void runOpMode() throws InterruptedException {
-        robot = new Tank(this);
+        robot = new Tank(this.hardwareMap);
 
         waitForStart();
 
